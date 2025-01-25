@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3558701290192702847}
   m_Layer: 0
-  m_Name: ProtectorPoint
+  m_Name: ProtectorHeight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 6953378709969159300}
   - component: {fileID: 4732741902866901739}
   - component: {fileID: 3618948226149204486}
+  - component: {fileID: 2035384018735597988}
   m_Layer: 0
   m_Name: _parentPhone
   m_TagString: Untagged
@@ -207,3 +208,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.076000005, y: 0.009, z: 0.16}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2035384018735597988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8986353671512104812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6cd48ad0c4b6724e87a95c2c017a6e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  protectorMin: {fileID: 6298174560288512992}
+  protectorMax: {fileID: 7033246381156709017}
