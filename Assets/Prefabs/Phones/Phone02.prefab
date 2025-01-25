@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1295240548953747438}
   - component: {fileID: 6953378709969159300}
   - component: {fileID: 4732741902866901739}
-  - component: {fileID: 3618948226149204486}
+  - component: {fileID: 8739718157712223926}
   m_Layer: 0
-  m_Name: Phone01
+  m_Name: Phone02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8986353671512104812}
-  m_Mesh: {fileID: -2986888136702974700, guid: b2ea8cf77638c1a49a42b50cac548d1c, type: 3}
+  m_Mesh: {fileID: 965769667040207666, guid: 57cafb24192c1864d8b89c95aad3adbb, type: 3}
 --- !u!23 &4732741902866901739
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3618948226149204486
+--- !u!65 &8739718157712223926
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
