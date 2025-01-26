@@ -11,17 +11,16 @@ public class BubblesController : MonoBehaviour
     [SerializeField] private Vector2Int numberOfBubbles;
     [SerializeField] private Vector2 bubbleSize;
 
-    [SerializeField] private Phone _currentPhone;
+    private Phone _currentPhone;
+    private GameplayCutscene _gameManager;
 
     private readonly List<Bubble> _activeBubbles = new();
 
-    private void OnEnable()
+    public void SpawnBubblesForPhone(GameplayCutscene gameManager, Phone phone)
     {
-        SpawnBubblesForPhone(_currentPhone);
-    }
+        _currentPhone = phone;
+        _gameManager = gameManager;
 
-    public void SpawnBubblesForPhone(Phone phone)
-    {
         var protectorMin = phone.ProtectorMin.position;
         var protectorMax = phone.ProtectorMax.position;
 
@@ -48,13 +47,16 @@ public class BubblesController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_currentPhone == null)
+            return;
+
         var protectorMin = _currentPhone.ProtectorMin.position;
         var protectorMax = _currentPhone.ProtectorMax.position;
 
         for (int i = _activeBubbles.Count - 1; i >= 0; i--)
         {
             var bubblePosition = _activeBubbles[i].transform.position;
-            var bubbleSize3D = Vector3.one * _activeBubbles[i].Size / 2f;
+            var bubbleSize3D = Vector3.one * _activeBubbles[i].Size / 2.5f;
             var bubblePositionPlus = bubblePosition + bubbleSize3D;
             var bubblePositionMinus = bubblePosition - bubbleSize3D;
 
@@ -63,9 +65,23 @@ public class BubblesController : MonoBehaviour
                 bubblePositionMinus.x >= protectorMax.x ||
                 bubblePositionMinus.z >= protectorMax.z)
             {
+                if (!_activeBubbles[i].gameObject.activeSelf)
+                {
+                    // despawn callback failed, remove manually
+                    _activeBubbles.RemoveAt(i);
+                    continue;
+                }
+
                 PlaySuccessFX(_activeBubbles[i].transform.position);
                 Pool.Instance.Despawn(_activeBubbles[i].gameObject);
             }
+
+        }
+
+        if (_activeBubbles.Count == 0)
+        {
+            _gameManager.OnAllBubblesBurst();
+            _currentPhone = null;
         }
     }
 

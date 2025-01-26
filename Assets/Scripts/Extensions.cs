@@ -4,6 +4,12 @@ using UnityEngine;
 public static class Extensions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static Vector3 ToVector3(this float value)
+    {
+        return new(value, value, value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Vector3 WithX(this Vector3 source, float xValue)
     {
         return new(xValue, source.y, source.z);
