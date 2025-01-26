@@ -36,14 +36,15 @@ public class GameplayCutscene : MonoBehaviour
     [SerializeField] private AnimationCurve clientRotationZ;
     [SerializeField] private AnimationCurve clientScale;
 
+    [SerializeField] private Scraper scraper;
+
     private Phone _currentPhone;
     private Coroutine _cutsceneCoroutine;
 
     private static readonly int ProtectorApplicationProgressParameterID = Shader.PropertyToID("_RollProgress");
 
-    private void OnEnable()
+    public void StartGame()
     {
-        // TODO start on player accepting an order
         _cutsceneCoroutine = StartCoroutine(GameplayStartCutscene());
     }
 
@@ -73,6 +74,7 @@ public class GameplayCutscene : MonoBehaviour
 
         // look at phone
         introCamera.SetActive(false);
+
         yield return new WaitForSeconds(cameraChangeTime);
 
         // screen protector sequence
@@ -80,6 +82,8 @@ public class GameplayCutscene : MonoBehaviour
         screenProtectorMaterial.SetFloat(ProtectorApplicationProgressParameterID, 0f);
 
         screenProtector.transform.localScale = _currentPhone.GetProtectorScale;
+
+        scraper.enabled = true;
 
         // flies to the corner of the phone
         yield return DelayWithCallbacks(protectorFlightTime,
@@ -115,6 +119,8 @@ public class GameplayCutscene : MonoBehaviour
 
         // looking at client
         introCamera.SetActive(true);
+        scraper.enabled = false;
+
         yield return new WaitForSeconds(1f);
 
         // phone despawned and reset

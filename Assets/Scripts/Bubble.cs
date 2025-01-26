@@ -51,7 +51,7 @@ public class Bubble : MonoBehaviour
             var otherBubble = collision.gameObject.GetComponent<Bubble>();
             TryEngulf(otherBubble);
         }
-        else if (otherLayer.Equals(Consts.Scraper) && Random.Range(0f, 1f) < splitChance)
+        else if (otherLayer.Equals(Consts.Scraper) && _size > 0.04f && Random.Range(0f, 1f) < splitChance)
         {
             // prevent instant merge
             IsEngulfed = true;
