@@ -78,6 +78,11 @@ public class BubblesController : MonoBehaviour
 
         }
 
+        // despawn callback failed, remove manually
+        for (int i = _activeBubbles.Count - 1; i >= 0; i--)
+            if (!_activeBubbles[i].gameObject.activeSelf)
+                _activeBubbles.RemoveAt(i);
+
         if (_activeBubbles.Count == 0)
         {
             _gameManager.OnAllBubblesBurst();
