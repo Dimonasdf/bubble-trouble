@@ -57,6 +57,7 @@ public class Bubble : MonoBehaviour
             IsEngulfed = true;
             SetSize(_size / 2f);
             Controller.SpawnBubble(transform.position.RandomAround(0.01f), _size / 2f);
+            Controller.PlayBurstSFX();
         }
     }
 
@@ -69,6 +70,7 @@ public class Bubble : MonoBehaviour
         otherBubble.IsEngulfed = true;
         SetSize(newSize);
         Pool.Instance.Despawn(otherBubble.gameObject);
+        Controller.PlayBurstSFX();
 
         return true;
     }

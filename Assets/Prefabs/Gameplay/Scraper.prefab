@@ -205,11 +205,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blade: {fileID: 3444517793362846655}
-  inactiveHeight: 0
-  inactiveAngleX: -15
+  inactiveHeight: 0.675
+  inactiveAngleX: -20
   readyAngleX: 0
-  activeHeight: 0
+  activeHeight: 0.529
   activeAngleX: 45
-  linearLerpPower: 10
-  angularLerpPowerY: 1
+  linearLerpPower: 5
+  angularLerpPowerY: 20
+  pressedAngularLerpPowerYDebuff: 0.25
+  angularLerpPowerX: 5
   angularLerpPower: 10

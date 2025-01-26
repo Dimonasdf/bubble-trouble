@@ -4,6 +4,9 @@ using UnityEngine;
 public class BubblesController : MonoBehaviour
 {
     [SerializeField] private GameObject bubblePrefab;
+    [SerializeField] private GameObject bubbleBurstPrefab;
+
+    [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private Vector2Int numberOfBubbles;
     [SerializeField] private Vector2 bubbleSize;
@@ -59,8 +62,23 @@ public class BubblesController : MonoBehaviour
                 bubblePositionPlus.z <= protectorMin.z ||
                 bubblePositionMinus.x >= protectorMax.x ||
                 bubblePositionMinus.z >= protectorMax.z)
+            {
+                PlaySuccessFX(_activeBubbles[i].transform.position);
                 Pool.Instance.Despawn(_activeBubbles[i].gameObject);
+            }
         }
+    }
+
+    private void PlaySuccessFX(Vector3 position)
+    {
+        Pool.Instance.Spawn(bubbleBurstPrefab, position);
+        PlayBurstSFX();
+    }
+
+    public void PlayBurstSFX()
+    {
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.Play();
     }
 
     private void OnDisable()
@@ -69,7 +87,6 @@ public class BubblesController : MonoBehaviour
         {
             if (_activeBubbles[i].gameObject.activeSelf)
                 Pool.Instance.Despawn(_activeBubbles[i].gameObject);
-
         }
 
         _activeBubbles.Clear();
