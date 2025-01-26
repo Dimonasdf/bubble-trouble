@@ -119,7 +119,7 @@ MonoBehaviour:
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 161
+    m_Bits: 673
   m_TransparentLayerMask:
     serializedVersion: 2
     m_Bits: 161
@@ -157,7 +157,7 @@ MonoBehaviour:
     AfterOpaque: 0
     Source: 1
     NormalSamples: 1
-    Intensity: 4
+    Intensity: 8
     DirectLightingStrength: 0.25
     Radius: 1
     Samples: 1

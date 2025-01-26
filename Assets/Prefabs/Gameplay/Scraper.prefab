@@ -52,7 +52,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.0771904, y: 0.02352274, z: 0.068172365}
-  m_Center: {x: 0, y: -0.0075350692, z: 0.029}
+  m_Center: {x: 0, y: -0.0075350692, z: -0.034}
 --- !u!1 &3116850564369926773
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 1078444325586883429}
   - component: {fileID: 8600843122702242359}
   - component: {fileID: 6434529061683511895}
+  - component: {fileID: 1746088708636763773}
   m_Layer: 0
   m_Name: Scraper
   m_TagString: Untagged
@@ -167,7 +168,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!65 &6434529061683511895
@@ -190,4 +191,25 @@ BoxCollider:
   m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.035572145, y: 0.025307998, z: 0.11395243}
-  m_Center: {x: 0, y: 0, z: -0.0566}
+  m_Center: {x: 0, y: 0, z: -0.1205}
+--- !u!114 &1746088708636763773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116850564369926773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64339cf6a8db2f4eaefe99b0c1b029b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blade: {fileID: 3444517793362846655}
+  inactiveHeight: 0
+  inactiveAngleX: -15
+  readyAngleX: 0
+  activeHeight: 0
+  activeAngleX: 45
+  linearLerpPower: 10
+  angularLerpPowerY: 1
+  angularLerpPower: 10
