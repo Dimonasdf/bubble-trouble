@@ -112,7 +112,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RollAxis: 0
-    - _RollProgress: 1
+    - _RollProgress: 0.15999985
     - _SampleGI: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
