@@ -6,6 +6,7 @@ public class Phone : MonoBehaviour
     [SerializeField] private Transform protectorMax;
 
     public Transform ProtectorMin => protectorMin;
+    public Transform ProtectorMax => protectorMax;
 
     public Vector3 GetProtectorScale
     {

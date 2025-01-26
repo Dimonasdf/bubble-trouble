@@ -20,4 +20,10 @@ public static class Extensions
     {
         return new(source.x, source.y, zValue);
     }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static Vector3 RandomAround(this Vector3 source, float offset)
+    {
+        return new(source.x + Random.Range(-offset, offset), source.y + Random.Range(-offset, offset), source.z);
+    }
 }
