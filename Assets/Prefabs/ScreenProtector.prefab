@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7894484496432805213}
   - component: {fileID: 6445933409961212916}
   - component: {fileID: 5882850313089666052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ScreenProtector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
